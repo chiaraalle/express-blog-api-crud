@@ -18,6 +18,7 @@ In Show e Destroy, controllare se il parametro si riferisce ad un post esistente
 const express = require('express') 
 const app = express() 
 const port = 3000 
+const postsRouter = require('./routers/posts')
 
 
 app.get("/", (req, res) => {
