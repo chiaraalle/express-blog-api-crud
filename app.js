@@ -25,6 +25,8 @@ app.get("/", (req, res) => {
      res.send(`Hello world`);
   });
 
+  app.use("/posts", postsRouter)
+
 app.listen(port, () => {   
     console.log(`Example app listening on port ${port}`)
   })
