@@ -28,8 +28,12 @@ const app = express()
 const port = 3000 
 const postsRouter = require('./routers/posts')
 
+//registro il body-parser per "application/json"
+app.use(express.json());
 
 app.get("/", (req, res) => {
+   // dentro req.body troveremo i dati ricevuti in formato json
+     console.log(req.body);
      res.send(`Hello world`);
   });
 
