@@ -13,9 +13,6 @@ const error = require('./middlewares/error')
 
 //registro il body-parser per "application/json"
 app.use(express.json());
-// registrato per tutte le rotte dell'app
-app.use(notFound);
-app.use(error);
 
 app.get("/", (req, res) => {
    // dentro req.body troveremo i dati ricevuti in formato json
@@ -24,6 +21,10 @@ app.get("/", (req, res) => {
   });
 
   app.use("/posts", postsRouter)
+
+  // registrato per tutte le rotte dell'app
+app.use(notFound);
+app.use(error);
 
 app.listen(port, () => {   
     console.log(`Example app listening on port ${port}`)
