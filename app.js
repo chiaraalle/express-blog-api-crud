@@ -10,9 +10,18 @@ const port = 3000
 const postsRouter = require('./routers/posts')
 const notFound = require('./middlewares/notFound')
 const error = require('./middlewares/error')
+const cors = require('cors');
+
+//registro il middleware per abilitare CORS
+app.use(cors(
+  {
+      origin: 'http://localhost:5173'
+  } 
+));
 
 //registro il body-parser per "application/json"
 app.use(express.json());
+
 
 app.get("/", (req, res) => {
    // dentro req.body troveremo i dati ricevuti in formato json
